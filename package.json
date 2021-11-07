@@ -4,14 +4,7 @@
     "description": "Examples using SGB's REST API",
     "main": "",
     "scripts": {
-        "test": "jest --coverage",
-        "watch": "jest --coverage --watchAll",
-        "start": "ts-node src/http_methods/index.ts",
-        "ui": "ts-node src/ui/index.ts",
-        "array_map_arrow": "ts-node src/array_map_arrow.ts",
-        "arrow_function": "ts-node src/arrow_function.ts",
-        "tableau_associatif": "ts-node src/tableau_associatif.ts",
-        "SGB_fetch_students": "ts-node src/SGB_fetch_students.ts"
+        "test": "jest --coverage --watchAll"
     },
     "author": "Christopher Fuhrman",
     "license": "MIT",
