@@ -1,0 +1,41 @@
+{
+    "name": "log210-sgb-cli",
+    "version": "1.0.0",
+    "description": "Examples using SGB's REST API",
+    "main": "",
+    "scripts": {
+        "test": "jest --coverage",
+        "watch": "jest --coverage --watchAll",
+        "start": "ts-node src/http_methods/index.ts",
+        "ui": "ts-node src/ui/index.ts",
+        "array_map_arrow": "ts-node src/array_map_arrow.ts",
+        "arrow_function": "ts-node src/arrow_function.ts",
+        "tableau_associatif": "ts-node src/tableau_associatif.ts",
+        "SGB_fetch_students": "ts-node src/SGB_fetch_students.ts"
+    },
+    "author": "Christopher Fuhrman",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "debug": "^4.3.2",
+        "express": "^4.17.1",
+        "md5": "^2.2.1",
+        "morgan": "^1.10.0",
+        "node-fetch": "^2.6.1",
+        "ts-node": "^10.2.1"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.19.1",
+        "@types/debug": "^4.1.5",
+        "@types/express": "^4.17.8",
+        "@types/morgan": "^1.9.1",
+        "@types/node": "^16.7.6",
+        "jest": "^27.1.0",
+        "jest-config": "^27.1.0",
+        "ts-jest": "^27.0.5",
+        "typescript": "^4.4.2"
+    },
+    "watch": {
+        "test": "{src,tests}/*.js"
+    }
+}
