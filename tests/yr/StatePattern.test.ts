@@ -16,18 +16,18 @@ describe('PhoneStateTest', () => {
 
   // https://jestjs.io/docs/using-matchers
   // it('get initial state'), () => {
-  //   expect(typeof (phone.state)).toEqual(ScreenOff);
+  // expect(phone.state instanceof ScreenOff).toEqual(true);
   // }
 
   // it('Plug power'), () => {
   //   phone.plugPower();
-  //   expect(typeof (phone.state)).toEqual(ScreenCharging);
+  //   expect(phone.state instanceof ScreenCharging).toEqual(true);
   // }
 
   // it('un Plug power'), () => {
   //   phone.plugPower();
   //   phone.unplugPower();
-  //   expect(typeof (phone.state)).toEqual(ScreenOff);
+  //   expect(phone.state instanceof ScreenOff).toEqual(true);
   // }
 
 });

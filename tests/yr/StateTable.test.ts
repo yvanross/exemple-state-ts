@@ -13,5 +13,9 @@ describe('PhoneStateTest', () => {
     expect(phone.number).toEqual("123-456-7890");
   });
 
+  //  it('get initial state'), () => {
+  //    expect(phone.state).toEqual('ScreenOff');
+  // }
+
 });
 
