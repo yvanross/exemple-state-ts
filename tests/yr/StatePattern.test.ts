@@ -27,7 +27,7 @@ describe('PhoneStateTest', () => {
   // it('un Plug power'), () => {
   //   phone.plugPower();
   //   phone.unplugPower();
-  //   expect(typeof (phone.state)).toEqual(ScreenCharging);
+  //   expect(typeof (phone.state)).toEqual(ScreenOff);
   // }
 
 });

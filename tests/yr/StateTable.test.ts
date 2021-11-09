@@ -1,4 +1,4 @@
-import { Phone } from '../../src/yr/Phone';
+import { Phone } from '../../src/yr/PhoneWidthStateTable';
 
 let phone: Phone;
 // state table:  https://stackoverflow.com/questions/133214/is-there-a-typical-state-machine-implementation-pattern/44955234#44955234
