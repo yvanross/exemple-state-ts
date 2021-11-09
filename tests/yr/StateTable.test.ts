@@ -10,7 +10,15 @@ let phone: Phone;
 describe('PhoneStateTest', () => {
 
   beforeEach(async () => {
-    phone = new Phone("123-456-7890");
+    let stateTable = [
+      ['ScreenOff', 'ScreenOff', 'pressButton', 'true', 'displayLowPowerMessage'],
+      ['ScreenOff', 'ScreenOn', 'pressButton', 'false', ''],
+      ['ScreenOn', 'ScreenOff', 'pressButton', '', ''],
+      ['ScreenOff', 'ScreenCharging', 'plugPower', '', ''],
+      ['ScreenOn', 'ScreenCharging', 'plugPower', '', ''],
+      ['ScreenCharging', 'ScreenOff', 'unplugPower', '', ''],
+    ];  
+    phone = new Phone("123-456-7890", stateTable);
   })
 
   it('get number', () => {

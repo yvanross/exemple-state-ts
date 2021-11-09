@@ -13,18 +13,11 @@ export class PhoneWithStateTable  {
   readonly POWER_LOW = 3;
   readonly OPERATION = 4;
 
-  constructor(number:string) {
+  constructor(number:string, stateTable:string[][]) {
     this._number = number;
     this._state = "ScreenOff"
     this._powerLow = true;
-    this._stateTable = [
-      ['ScreenOff', 'ScreenOff', 'pressButton', 'true', 'displayLowPowerMessage'],
-      ['ScreenOff', 'ScreenOn', 'pressButton', 'false', ''],
-      ['ScreenOn', 'ScreenOff', 'pressButton', '', ''],
-      ['ScreenOff', 'ScreenCharging', 'plugPower', '', ''],
-      ['ScreenOn', 'ScreenCharging', 'plugPower', '', ''],
-      ['ScreenCharging', 'ScreenOff', 'unplugPower', '', ''],
-    ];  
+    this._stateTable = stateTable;
   }
 
   filterByOperationAndState():string[][] {
@@ -52,16 +45,19 @@ export class PhoneWithStateTable  {
     expect(result.length >= 1).toBeTruthy();
     
     let powerState = result.filter(table => table[this.POWER_LOW] == powerLowStr);
-    if (powerState.length>0) {
-      this._state = powerState[this.FIRST][this.NEXT_STATE];
-      if (powerState[this.FIRST][this.OPERATION].length > 0)
-        eval(`this.${powerState[this.FIRST][this.OPERATION]}()`);  
-    } else {
+    if (powerState.length == 0) {
       this._state = result[this.FIRST][this.NEXT_STATE];
+    } else {
+      this._state = powerState[this.FIRST][this.NEXT_STATE];
+      this.executeOperation(powerState);
     }
-        
-
   }
+
+  executeOperation(stateTable: string[][]) {
+    if (stateTable[this.FIRST][this.OPERATION].length > 0)
+    eval(`this.${stateTable[this.FIRST][this.OPERATION]}()`);  
+  }
+
   get number(): string {
       return this._number;
   }
