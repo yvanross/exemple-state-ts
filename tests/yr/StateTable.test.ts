@@ -66,6 +66,11 @@ describe('PhoneStateTest', () => {
     expect(phone.state).toEqual('ScreenOn');
   });
 
+  it('ScreenOn unplugPower will crash', () => {
+    phone.state = "ScreenOn";
+    expect(() => { phone.unplugPower() }).toThrow('Method not implemented.');
+  });
+
 
 });
 

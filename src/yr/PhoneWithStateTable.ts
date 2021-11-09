@@ -36,7 +36,8 @@ export class PhoneWithStateTable  {
   }
   unplugPower() {
     let result = this.filterByOperationAndState();
-    expect(result.length).toEqual(1);
+    if (result.length != 1)
+      throw new Error('Method not implemented.');
     this._state = result[this.FIRST][this.NEXT_STATE];
   }
   pressButton() {
