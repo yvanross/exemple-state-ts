@@ -1,16 +1,15 @@
-import { Phone } from '../../src/yr/Phone';
-import { ScreenOff } from '../../src/yr/Pattern/ScreenOff';
-import { ScreenOn } from '../../src/yr/Pattern/ScreenOn';
-import { PhoneState } from '../../src/yr/Pattern/PhoneState';
-import { ScreenCharging } from '../../src/yr/Pattern/ScreenCharging';
-import { InvalidState } from '../../src/yr/Pattern/InvalidState';
+import { Phone } from '../../src/yr-original/Phone';
+import { ScreenOff } from '../../src/yr-original/Pattern/ScreenOff';
+import { ScreenOn } from '../../src/yr-original/Pattern/ScreenOn';
+import { PhoneState } from '../../src/yr-original/Pattern/PhoneState';
+import { ScreenCharging } from '../../src/yr-original/Pattern/ScreenCharging';
+import { InvalidState } from '../../src/yr-original/Pattern/InvalidState';
 
 let phone: Phone;
 
 
 // https://stackoverflow.com/questions/133214/is-there-a-typical-state-machine-implementation-pattern/44955234#44955234
 describe('PhoneStateTest', () => {
-
   beforeEach(async () => {
     phone = new Phone("123-456-7890");
   })
